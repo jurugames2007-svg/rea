@@ -1,0 +1,22 @@
+name: Auto Repomix Remote
+
+on:
+  workflow_dispatch: # Te permite activarlo manualmente con un solo clic, sin escribir nada
+
+jobs:
+  repomix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Repomix Remote Automatically
+        run: npx repomix --remote ${{ github.repository }}
+
+      - name: Upload Repomix Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: repomix-output
+          path: repomix-output.txt
