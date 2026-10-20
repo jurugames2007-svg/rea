@@ -308,7 +308,9 @@
     "docs:prepare": "node scripts/generate-package-metadata.mjs && turbo run artifacts:product-catalog artifacts:managed-evidence artifacts:error-schema",
     "verify:web:qlog": "npm run build:cached && node scripts/verify-qlog-captures.mjs",
     "licenses:generate": "node scripts/generate-third-party-inventory.mjs",
-    "licenses:check": "node scripts/generate-third-party-inventory.mjs --check"
+    "licenses:check": "node scripts/generate-third-party-inventory.mjs --check",
+    "repomix:split": "node scripts/generate-repomix-split.mjs",
+    "repomix:plan": "node scripts/generate-repomix-split.mjs --plan"
   },
   "lint-staged": {
     "*.{cjs,cts,js,jsx,mjs,mts,ts,tsx}": [

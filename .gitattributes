@@ -6,3 +6,7 @@
 
 # Preserve whitespace in original upstream licensing texts.
 licenses/npm-runtime-notices.txt whitespace=-blank-at-eol
+
+# Generated Repomix packs embed file contents byte-for-byte, including CRLF
+# fixtures; never normalize them (keeps MANIFEST.json SHA-256 values valid).
+/repomix-output/*.xml -text
